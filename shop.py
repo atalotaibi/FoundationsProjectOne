@@ -20,7 +20,8 @@ def print_menu():
     """
     # your code goes here!
     for key in menu:
-        print menu[key]
+        print ("%s: %f"%(key,menu[key]))
+
 
 
 def print_originals():
@@ -30,7 +31,7 @@ def print_originals():
     print("Our original flavor cupcakes (KD %s each):" % original_price)
     # your code goes here!
     for o_flavors in original_flavors:
-        print o_flavors
+        print (o_flavors)
 
 
 def print_signatures():
@@ -40,7 +41,7 @@ def print_signatures():
     print("Our signature flavor cupcake (KD %s each):" % signature_price)
     # your code goes here!
     for s_flavors in signature_flavors:
-        print s_flavors
+        print (s_flavors)
 
 
 def is_valid_order(order):
@@ -59,7 +60,7 @@ def get_order():
     """
     order_list = []
     # your code goes here!
-    print "Enter your order: "
+    print ("Enter your order: ")
     while True:
         user_order = raw_input()
         if user_order == "Exit":
@@ -67,7 +68,7 @@ def get_order():
         elif is_valid_order(user_order) == True:
             order_list.append(user_order)
         else:
-            print "try again"
+            print ("try again")
 
     return order_list
 
@@ -108,7 +109,8 @@ def print_order(order_list):
     print("Your order is: ")
     # your code goes here!
     for user_order in order_list:
-        print user_order
-    print get_total_price(order_list)
-    accept_credit_card(get_total_price(order_list))
-    print cupcake_shop_name
+        print (user_order)
+    print (get_total_price(order_list))
+    total = get_total_price(order_list)
+    accept_credit_card(total)
+    print (cupcake_shop_name)
